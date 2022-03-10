@@ -29,7 +29,7 @@ def find_title(textBlock):
     """
     prefix = len("Title: ")
     start = textBlock.index('Title')
-    end  = textBlock.index('Authors')
+    end = textBlock.index('Authors')
     return textBlock[start:end][prefix:].strip("\n")
 
 
