@@ -1,4 +1,4 @@
-#!/Users/danewilliamson/PycharmProjects/arxiv-parser/venv/bin/python
+#!./venv/bin/python
 from utils import Paper
 import argparse
 from utils import load_file
@@ -25,6 +25,7 @@ def main():
     for pub in pub_list:
         if kw.lower() in pub.title.lower():
             print(pub.abstract)
+            # print(pub.title)
 
 
 if __name__ == '__main__':
