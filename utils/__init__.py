@@ -1,2 +1,2 @@
-from .paper import *
+from .results import *
 from .parser import *
