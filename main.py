@@ -1,31 +1,29 @@
 #!./venv/bin/python
-from utils import Paper
+from utils.parser import make_query
+from utils.results import renderMarkdownTable
 import argparse
-from utils import load_file
+import arxiv
 
 
-def parse_command_line():
-    """
-    :param: keyword: the keyword
-            you want to search
-            the titles for
-    :return: the title of the paper
-            which has the keyword
-            of interest
-    """
-    parser = argparse.ArgumentParser(description="Get cli info")
-    parser.add_argument('--keyword', metavar='K',)
-    args = parser.parse_args()
-    return args.keyword
 
 
 def main():
-    pub_list = load_file("arxiv.html")
-    kw = parse_command_line()
-    for pub in pub_list:
-        if kw.lower() in pub.title.lower():
-            print(pub.abstract)
-            # print(pub.title)
+    parser = argparse.ArgumentParser(description="Get cli info")
+    parser.add_argument('--keyword', metavar='K', type=str )
+    parser.add_argument('--cat', metavar='C', type=str,)
+    parser.add_argument('--keywords', metavar='KS', type=str)
+    args = parser.parse_args()
+    kw = args.keyword
+    kws = args.keywords
+    cat = args.cat
+    if kw is not None:
+        results = make_query(kw, cat)
+    else:
+        with open(kws, 'r') as f:
+            kws_ = f.read().splitlines()
+        for keyword in kws_:
+            results = make_query(kw, cat)
+    renderMarkdownTable(results)
 
 
 if __name__ == '__main__':
