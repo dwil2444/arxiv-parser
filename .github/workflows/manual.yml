@@ -18,4 +18,3 @@ jobs:
           python main.py --keywords keywords.txt --cat "cs"
         env:
           key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-      - name: export index
