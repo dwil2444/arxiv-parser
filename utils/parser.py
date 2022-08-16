@@ -4,9 +4,9 @@ import arxiv
 def verify_taxonomy(result, targ):
     """"
     :param result: the arxiv result returned
-    by  pyarxiv library
+    by  arxiv library
 
-    :param targ: the  target categpry
+    :param targ: the  target category
 
     :return: TRUE if the result's primary category is
     in the specified taxonomy. FALSE otherwise
