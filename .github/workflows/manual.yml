@@ -2,21 +2,21 @@ on:
   schedule:
     - cron: "5 * * * * *" #runs at 00:00 UTC everyday
 
-      jobs:
-        build:
-          runs-on: ubuntu-latest
+jobs:
+  build:
+    runs-on: ubuntu-latest
 
-          steps:
-            - name: checkout repo content
-              uses: actions/checkout@v2 # checkout the repository content to github runner.
-            - name: setup python
-              uses: actions/setup-python@v2
-              with:
-                python-version: 3.10 #install the python needed
-            - name: execute py script # run the run.py to get the latest data
-              run: |
-                python main.py --keywords keywords.txt --cat "cs"
-              env:
-                key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
-            - name: export index
-              .... # use corresponding script or actions to help export.
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner.
+      - name: setup python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.10 #install the python needed
+      - name: execute py script # run the run.py to get the latest data
+        run: |
+          python main.py --keywords keywords.txt --cat "cs"
+        env:
+          key: ${{ secrets.key }} # if run.py requires passwords..etc, set it as secrets
+      - name: export index
+        .... # use corresponding script or actions to help export.
