@@ -19,8 +19,9 @@ def renderMarkdownTable(results):
             conf  = 'arxiv'
             notes = result.summary.split('\n')[0]
             link = result.pdf_url
-            line = '**' + title + '**' + ' | ' + authors + ' | ' + conf + ' | ' + notes + ' | ' + link + ' '
-            f.writelines(line)
+            line = '**' + title + '**' + ' | ' + authors + ' | ' + conf + ' | ' + notes + ' | ' + link + ' | '
+            f.writelines(line + '  ' +  '\n')
+
         f.writelines('\n')
         f.writelines('\n')
         f.close()
