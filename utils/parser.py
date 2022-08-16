@@ -31,7 +31,7 @@ def make_query(keyword, category):
     verified = []
     search = arxiv.Search(
         query=keyword,
-        max_results=10,
+        max_results=100,
         sort_by=arxiv.SortCriterion.SubmittedDate,
         sort_order=arxiv.SortOrder.Descending
     )

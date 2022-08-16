@@ -1,5 +1,4 @@
 #TODO: Render results in MarkDown
-from mdutils.mdutils import MdUtils
 
 
 def renderMarkdownTable(results):

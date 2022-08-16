@@ -5,8 +5,6 @@ import argparse
 import arxiv
 
 
-
-
 def main():
     parser = argparse.ArgumentParser(description="Get cli info")
     parser.add_argument('--keyword', metavar='K', type=str )
