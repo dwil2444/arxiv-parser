@@ -20,7 +20,7 @@ def main():
         with open(kws, 'r') as f:
             kws_ = f.read().splitlines()
         for keyword in kws_:
-            results = make_query(kw, cat)
+            results = make_query(keyword, cat)
     renderMarkdownTable(results)
 
 
