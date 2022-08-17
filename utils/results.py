@@ -8,7 +8,7 @@ def renderMarkdownTable(results):
     :return: no value returned, results
     are rendered in README.md
     """
-    with open ('./README.md', 'a') as f:
+    with open ('./README.md', 'w') as f:
         f.seek(0)
         date = today.strftime("%B %d, %Y")
         f.writelines('Updated on: ' + date + '\n')
