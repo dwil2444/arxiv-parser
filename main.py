@@ -1,4 +1,4 @@
-#!./venv/bin/python
+#!\venv\Scripts\python.exe
 from utils.parser import make_query
 from utils.results import renderMarkdownTable
 import argparse
