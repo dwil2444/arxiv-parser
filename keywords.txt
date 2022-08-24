@@ -1,1 +1,4 @@
 cat:cs.AI
+cat:cs.LG
+cat:cs.CV
+cat:cs.SE
