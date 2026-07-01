@@ -1,6 +1,7 @@
 arxiv==1.4.2
 beautifulsoup4==4.10.0
 feedparser==6.0.10
+fire==0.6.0
 html5lib==1.1
 lxml==4.8.0
 numpy==1.22.3
